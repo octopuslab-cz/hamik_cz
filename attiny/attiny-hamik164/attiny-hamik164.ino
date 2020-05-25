@@ -2,21 +2,21 @@
                     ATtiny 85 
                 RST =--U--= VCC        oeLAB dev board1                  
 > ANALOG_PIN (A) P3 =     = P2 (A1) (3) i2c Clock 
-<    UART TX (A) P4 =     = P1 /    (2) > LED 
+<    UART_TX (A) P4 =     = P1 /    (2) > LED 
                 GND =     = P0 /  > (1) i2c Data 
                
 > Arduino UNO serial display TTF 320x240*/
 
 #include <SoftwareSerial.h> 
 
-#define RX    3  
-#define TX    4  
-#define LED1_PIN        1              
-#define LED2_PIN        5  
-#define ANALOG_PIN      3 
+#define UART_RX    3  
+#define UART_TX    4  
+#define LED1_PIN   1              
+#define LED2_PIN   5  
+#define ANALOG_PIN 3 
 
 int sensorValue = 0;  // variable to store the value coming from the sensor
-SoftwareSerial TSerial(RX, TX); //TSerial for Attiny
+SoftwareSerial TSerial(UART_RX, UART_TX); //TSerial for Attiny
 
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
