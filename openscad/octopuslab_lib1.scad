@@ -2,8 +2,6 @@ include <./BOSL/constants.scad>
 use <./BOSL/transforms.scad>
 //https://github.com/revarbat/BOSL
 
-
-
 //include <../octopuSCAD/boards.scad>
 //include <octopus_modules.scad>
 //include <totem.scad>
@@ -24,11 +22,11 @@ difference() {
 module distance2x(h1=5,h2=5) {
     distance(h = h1);
     xmove(2) ymove(-0.8) cube([3,1.6,5]);    
-    xmove(7) distance(h = h2);  
-    
+    xmove(7) distance(h = h2);    
 }
 
 
+//holder
 module hold_90(tl=2.5){
     difference(){
         union(){
@@ -38,6 +36,7 @@ module hold_90(tl=2.5){
         cylinder(d=3.2, h = tl*3);   
     }
 }
+
 
 //connector 90 |_
 module conn_90(hs = 5) {
@@ -72,18 +71,15 @@ module box_0(a=58,b=28,tl=1.5,h=6){
 }
 
 
+
 tl_drazka = 1.6;
 h_drazka = 6;
 
 module box_1(a=58,b=28,tl=1.5,h=6){
-
+   x0=3.5;
+   if (a==wa1){ x0 = 4.5; }   
    
- //4.5 pro malé 1/3, 7 pro 2/3
-  //4.5 pro malé 1/3, 7 pro 2/3
-    x0=3.5;
-    if (a==wa1){ x0 = 4.5; } 
    
-    
    difference(){
         
      cube([a,b,h]);
@@ -186,7 +182,7 @@ difference() {
  82
  */ 
 //box_1(a=27,b=28,tl=1.5,h=10);
-box_1(a=54,b=28,tl=1.5,h=10);
+//box_1(a=54,b=28,tl=1.5,h=10);
 
 //strip(n=5);
 //strip(n=3,socket=false);
