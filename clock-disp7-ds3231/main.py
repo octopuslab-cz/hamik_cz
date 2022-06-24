@@ -1,2 +1,2 @@
-# import wsclock-test-ds3231
-import clock-disp7-ds3231
+# import wsclock_test_ds3231
+import clock_disp7_ds3231
